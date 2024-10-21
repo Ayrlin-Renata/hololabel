@@ -1,0 +1,17 @@
+{
+  "name": "hololabel",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx src/main.ts",
+    "autopost": "npx tsx src/post.ts"
+  },
+  "dependencies": {
+    "@skyware/bot": "^0.3.4",
+    "@skyware/labeler": "^0.1.10",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.7"
+  }
+}
