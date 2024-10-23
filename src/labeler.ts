@@ -32,12 +32,14 @@ export const label = (did: string, rkey: string) => {
     try {
         if (rkey.includes(DELETE)) { //remove labels if delete message liked
             //remove all user labels
-            server.createLabels({ uri: did }, { negate: [...labels] });
+            const out = server.createLabels({ uri: did }, { negate: [...labels] });
             console.log(`${new Date().toISOString()} Deleted labels: ${did}`);
+            console.log(out);
         } else if (labels.size < MAXLABELS && POSTS[rkey]) { //add labels to user
             //lookup label name using end of uri, then create for user
-            server.createLabel({ uri: did, val: POSTS[rkey] });
+            const out = server.createLabel({ uri: did, val: POSTS[rkey] });
             console.log(`${new Date().toISOString()} Labeled ${did}: ${POSTS[rkey]}`);
+            console.log(out);
         }
     } catch (err) {
         console.error(err);
