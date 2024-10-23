@@ -28,18 +28,18 @@ export const label = (did: string, rkey: string) => {
         else set.delete(label.val);
         return set;
     }, new Set<string>());
+    console.log("Event user labels:");
+    console.log(labels);
 
     try {
         if (rkey.includes(DELETE)) { //remove labels if delete message liked
             //remove all user labels
-            const out = server.createLabels({ uri: did }, { negate: [...labels] });
+            server.createLabels({ uri: did }, { negate: [...labels] });
             console.log(`${new Date().toISOString()} Deleted labels: ${did}`);
-            console.log(out);
         } else if (labels.size < MAXLABELS && POSTS[rkey]) { //add labels to user
             //lookup label name using end of uri, then create for user
-            const out = server.createLabel({ uri: did, val: POSTS[rkey] });
+            server.createLabel({ uri: did, val: POSTS[rkey] });
             console.log(`${new Date().toISOString()} Labeled ${did}: ${POSTS[rkey]}`);
-            console.log(out);
         }
     } catch (err) {
         console.error(err);
