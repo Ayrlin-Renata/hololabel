@@ -167,7 +167,7 @@ const momosuzu_nene_post = await nepolabo_post.reply({text: "🍑🥟 Momosuzu, 
 const shishiro_botan_post = await nepolabo_post.reply({text: "♌ Shishiro, Botan"});
 const omaru_polka_post = await nepolabo_post.reply({text: "🎪 Omaru, Polka"});
 
-const darknesss_laplus_post = await secret_society_holox_post.reply({text: "🛸💜 Darknesss, La+"});
+const darknesss_laplus_post = await secret_society_holox_post.reply({text: "🛸💜 Darknesss, La+ Dia Highest Death Thirteen Daina Art of Impact Sign Emperor Road of the"});
 const takane_lui_post = await secret_society_holox_post.reply({text: "🥀 Takane, Lui"});
 const hakui_koyori_post = await secret_society_holox_post.reply({text: "🧪 Hakui, Koyori"});
 const sakamata_chloe_post = await secret_society_holox_post.reply({text: "🎣 Sakamata, Chloe"});
@@ -198,7 +198,7 @@ const ravencroft_nerissa_post = await advent_post.reply({text: "🎼 Ravencroft,
 const abyssgard_fuwawa_post = await advent_post.reply({text: "🐾💙 Abyssgard, Fuwawa"});
 const abyssgard_mococo_post = await advent_post.reply({text: "🐾🩷 Abyssgard, Mococo"});
 
-const bloodflame_elizabeth_post = await justice_post.reply({text: "💄 Bloodflame, Elizabeth"});
+const bloodflame_elizabeth_post = await justice_post.reply({text: "💄 Bloodflame, Elizabeth Rose"});
 const murin_gigi_post = await justice_post.reply({text: "👧 Murin, Gigi"});
 const immergreen_cecilia_post = await justice_post.reply({text: "🍵 Immergreen, Cecilia"});
 const panthera_raora_post = await justice_post.reply({text: "🐱 Panthera, Raora"});
