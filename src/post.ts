@@ -1,4 +1,4 @@
-import { DID, PASSWORD, POSTS, DELETE } from './constants';
+import { DID, PASSWORD, POSTS, DELETE, ORG_POSTS } from './constants';
 
 import { Bot } from "@skyware/bot";
 
@@ -10,6 +10,12 @@ await bot.login({
 
 //remove old posts
 bot.deletePost(`${DID}/app.bsky.feed.post/${DELETE}`);
+
+Object.entries(ORG_POSTS).forEach((record) => {
+    const uri = `${DID}/app.bsky.feed.post/${record[0]}`
+    console.log(`Deleting post ${record[0]}: ${record[1]}`);
+    bot.deletePost(uri);
+})
 
 Object.entries(POSTS).forEach((record) => {
     const uri = `${DID}/app.bsky.feed.post/${record[0]}`
@@ -100,7 +106,7 @@ const justice_post = await hololive_en_post.reply({
     text: "-Justice-",
     threadgate: { allowLists: [] }
 });
-const en_former_post = await hololive_post.reply({
+const en_former_post = await hololive_en_post.reply({
     text: "Former members",
     threadgate: { allowLists: [] }
 });
@@ -218,6 +224,33 @@ const ichijou_ririka_post = await regloss_post.reply({text: "🌃 Ichijou, Ririk
 const juufuutei_raden_post = await regloss_post.reply({text: "🐚 Juufuutei, Raden"});
 const todoroki_hajime_post = await regloss_post.reply({text: "🐧⚡️ Todoroki, Hajime"});
 
+
+console.log(`--- ORG_POSTS ---`)
+console.log(`'${post.uri}' :post`);
+console.log(`'${hololive_post.uri}' :hololive_post`);
+console.log(`'${hololive_en_post.uri}' :hololive_en_post`);
+console.log(`'${hololive_id_post.uri}' :hololive_id_post`);
+console.log(`'${hololive_dev_is_post.uri}' :hololive_dev_is_post`);
+console.log(`'${gen0_post.uri}' :gen0_post`);
+console.log(`'${gen1_post.uri}' :gen1_post`);
+console.log(`'${gen2_post.uri}' :gen2_post`);
+console.log(`'${hololive_gamers_post.uri}' :hololive_gamers_post`);
+console.log(`'${hololive_fantasy_post.uri}' :hololive_fantasy_post`);
+console.log(`'${gen4_post.uri}' :gen4_post`);
+console.log(`'${nepolabo_post.uri}' :nepolabo_post`);
+console.log(`'${secret_society_holox_post.uri}' :secret_society_holox_post`);
+console.log(`'${jp_former_post.uri}' :jp_former_post`);
+console.log(`'${myth_post.uri}' :myth_post`);
+console.log(`'${promise_post.uri}' :promise_post`);
+console.log(`'${advent_post.uri}' :advent_post`);
+console.log(`'${justice_post.uri}' :justice_post`);
+console.log(`'${en_former_post.uri}' :en_former_post`);
+console.log(`'${area_15_post.uri}' :area_15_post`);
+console.log(`'${holoro_post.uri}' :holoro_post`);
+console.log(`'${holoh3ro_post.uri}' :holoh3ro_post`);
+console.log(`'${regloss_post.uri}' :regloss_post`);
+
+console.log(`--- POSTS ---`)
 console.log(`'${remove_post.uri}' :remove_post`)
 console.log(`'${holofan_post.uri}' :holofan_post`)
 console.log(`'${tokino_sora_post.uri}' :tokino_sora_post`);
